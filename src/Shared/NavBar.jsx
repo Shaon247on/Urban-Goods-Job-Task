@@ -16,12 +16,12 @@ const NavBar = () => {
                 backgroundColor: isActive ? '#F5AB41' : 'transparent',
                 fontWeight: isActive ? '700' : '400',
             })}><li className='text-sm md:text-base'>Home</li></NavLink>
-            <NavLink to='/dashboard' style={({ isActive }) => ({
+            <NavLink to='/product' style={({ isActive }) => ({
                 padding: '4px 10px',
                 borderRadius: '5px',
                 backgroundColor: isActive ? '#F5AB41' : 'transparent',
                 fontWeight: isActive ? '700' : '400',
-            })}><li className='text-sm md:text-base'>Dashboard</li></NavLink>
+            })}><li className='text-sm md:text-base'>Products</li></NavLink>
         </>
 
 
@@ -46,7 +46,7 @@ const NavBar = () => {
 
     return (
         <React.Fragment>
-            <div className='bg-[#f1e9e2] py-1'>
+            <div className='bg-[#f1e9e2] dark:bg-black py-1'>
                 <h1 className='text-center text-sm'>Free Express Shipping on all orders with all duties included</h1>
             </div>
             <div className="navbar bg-base-100 px-1 md:px-6">
@@ -108,8 +108,8 @@ const NavBar = () => {
                     <div className='flex items-center gap-3 justify-center'>
                         <img src={`${theme === "black" ? logo1 : logo2}`} alt="" className='rounded-full w-12 md:w-16 h-12 md:h-16' />
                         <div>
-                            <p className='font-bold text-lg md:text-xl -mb-1'><samp className='text-[#F5AB41] text-xl md:text-2xl'>FUT</samp>URE</p>
-                            <p className='font-bold text-lg md:text-xl -mt-1'>WID<span className='text-[#F5AB41] text-lg md:text-xl'>GETS</span></p>
+                            <p className='font-bold text-lg md:text-xl -mb-1'><samp className='text-[#F5AB41] text-xl md:text-2xl'>URB</samp>AN</p>
+                            <p className='font-bold text-lg md:text-xl -mt-1'>G<span className='text-[#F5AB41] text-lg md:text-xl'>OO</span>DS</p>
                         </div>
                     </div>
                 </div>

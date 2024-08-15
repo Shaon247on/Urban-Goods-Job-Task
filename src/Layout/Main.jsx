@@ -6,11 +6,9 @@ import Footer from '../Shared/Footer';
 const Main = () => {
     return (
         <React.Fragment>
-            <div className='mx-2 md:mx-8'>
-                <NavBar />
-                <Outlet />
-                <Footer />
-            </div>
+            <NavBar />
+            <Outlet />
+            <Footer />
         </React.Fragment>
     );
 };
