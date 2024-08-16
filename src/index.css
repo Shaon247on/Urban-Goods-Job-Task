@@ -36,3 +36,8 @@
 .animation-hover:hover{
     background-position: right;
 }
+
+.example-track.example-track-1{
+    background: rgb(32, 180, 27);
+}
+

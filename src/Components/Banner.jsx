@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import bannerPhoto from '../../assets/istockphoto-2159420164-640_adpp_is.mp4';
+import bannerPhoto from '../assets/istockphoto-2159420164-640_adpp_is.mp4';
 import { FaArrowRightLong } from "react-icons/fa6";
 import 'animate.css';
-import useProvider from '../../Hooks/useProvider';
+import useProvider from '../Hooks/useProvider';
 
 const Banner = () => {
     const { theme } = useProvider()

@@ -1,12 +1,15 @@
 import React from 'react';
 import useProducts from '../../Hooks/useProducts';
-import Card from '../../Components/Banner/Card';
+import Card from '../../Components/Card';
 import { Link } from 'react-router-dom';
 import SortAndFilter from '../../Components/SortAndFilter';
 
 const Products = () => {
     const [products] = useProducts()
     console.log(products);
+    const handleFilter= (e)=>{
+        console.log(e);
+    }
     return (
         <div className='mx-10'>
             <div className='text-center'>
@@ -17,12 +20,12 @@ const Products = () => {
 
 
                 {/*------------------- Sort Section ------------------- */}
-                <SortAndFilter/>
+                <SortAndFilter onChange={handleFilter}/>
 
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-10'>
                 {
-                    products.slice(0, 6).map(product => <Card key={product.id} product={product}></Card>)
+                    products.slice(0, 6).map(product => <Card key={product._id} product={product}></Card>)
                 }
             </div>
             <div className='text-center mt-6'>
