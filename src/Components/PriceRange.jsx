@@ -4,7 +4,7 @@ const PriceRange = ({ value, setValue }) => {
 
     return (
         <>
-            <h1 className='text-xl font-semibold mb-3 mt-8'>Price Range</h1>
+            <h1 className='text-xl font-semibold mb-3 mt-8 text-[#419577]'>Price Range</h1>
             <div className='flex items-center gap-2 justify-center mb-1 text-lg '>
                 <h1>Min: ${value[0]}</h1>
                 <h1>-</h1>

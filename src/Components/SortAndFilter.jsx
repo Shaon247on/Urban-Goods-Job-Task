@@ -3,10 +3,13 @@ import { useForm } from 'react-hook-form';
 import useProducts from '../Hooks/useProducts';
 import FilterDrawer from './FilterDrawer';
 
-const SortAndFilter = () => {
+const SortAndFilter = ({ onChange }) => {
+
     const [value, setValue] = useState([])
-    const [products, refetch, loading] = useProducts()
-    console.log(products);
+    const [filters, setFilters] = useState({ search: '', category: '', brand: '', sort: 'createdAt' })
+    const [products, refetch, loading] = useProducts(filters, value)
+    // console.log(products);
+    // console.log(products.slice(0,10));
     const {
         register,
         handleSubmit,
@@ -14,8 +17,10 @@ const SortAndFilter = () => {
     } = useForm({})
 
     const onSubmit = (data) => {
-        // onchange(data)
-        // console.log(data,value);
+        setFilters(data)
+        onChange(data, value)
+        refetch()
+        console.log(products.slice(0, 10));
     }
 
     const handleReset = () => {
@@ -26,16 +31,26 @@ const SortAndFilter = () => {
     }
     return (
         <div>
-            <form className="flex items-center justify-between" onSubmit={handleSubmit(onSubmit)}>
-                <FilterDrawer setValue={setValue} value={value} products={products} register={register} handleReset={handleReset}></FilterDrawer>
-                <input {...register('search')} placeholder="Search by name" className='border_style' />                
-                <select {...register('sort')}>
-                    <option value="createdAt">Sort by Date Added</option>
-                    <option value="lowToHigh">Price: Low to High</option>
-                    <option value="highToLow">Price: High to Low</option>
-                </select>
-                <button type="submit">Apply</button>
-                <button type="button" onClick={handleReset}>Reset</button>
+            <form className="flex gap-6 flex-col lg:flex-row items-start lg:items-center justify-between" onSubmit={handleSubmit(onSubmit)}>
+                <div className='flex gap-9 items-center justify-between mt-8'>
+
+                    <div>
+                        <FilterDrawer setValue={setValue} value={value} products={products} register={register} handleReset={handleReset}></FilterDrawer>
+                    </div>
+
+                    <input {...register('search')} placeholder="Search by name" className='w-[100px] md:w-[250px] lg:w-[350px] px-3 py-2 placeholder-[#F5AB41] focus:placeholder-transparent border-b-[#F5AB41] border-b focus:border-b-[#F5AB41] duration-150  focus:border-b-4 hover:border-b-[#F5AB41] hover:border-b-4 outline-none bg-transparent' />
+
+                    <select {...register('sort')} className='select select-warning w-full max-w-[200px]'>
+                        <option value="createdAt">Sort by Date Added</option>
+                        <option value="lowToHigh">Price: Low to High</option>
+                        <option value="highToLow">Price: High to Low</option>
+                    </select>
+
+                </div>
+                <div className='flex items-center gap-4'>
+                    <button className='px-4 py-2 rounded-lg animation-hover' type="submit">Apply</button>
+                    <button className='px-4 py-2 rounded-lg animation-hover' type="button" onClick={handleReset}>Reset</button>
+                </div>
             </form>
         </div >
     );

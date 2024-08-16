@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useProducts from '../../Hooks/useProducts';
 import Card from '../../Components/Card';
 import { Link } from 'react-router-dom';
 import SortAndFilter from '../../Components/SortAndFilter';
+import useAxios from '../../Hooks/useAxios';
 
-const Products = () => {
+const Products = () => {    
     const [products] = useProducts()
+    
     console.log(products);
     const handleFilter= (e)=>{
         console.log(e);
     }
     return (
-        <div className='mx-10'>
+        <div className='mx-2 md:mx-6 lg:mx-10'>
             <div className='text-center'>
                 <h1 className='text-2xl md:text-5xl font-semibold mb-3 text-[#419577]'>Product Showcase</h1>
                 <p className='text-lg font-medium text-gray-600/65'>Discover our top products across various categories. Browse, compare, and <br />find the perfect fit for your needs, all with detailed info and easy navigation.</p>
