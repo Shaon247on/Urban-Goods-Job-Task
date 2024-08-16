@@ -16,7 +16,7 @@ const NavBar = () => {
                 backgroundColor: isActive ? '#F5AB41' : 'transparent',
                 fontWeight: isActive ? '700' : '400',
             })}><li className='text-sm md:text-base'>Home</li></NavLink>
-            <NavLink to='/product' style={({ isActive }) => ({
+            <NavLink to='/products' style={({ isActive }) => ({
                 padding: '4px 10px',
                 borderRadius: '5px',
                 backgroundColor: isActive ? '#F5AB41' : 'transparent',

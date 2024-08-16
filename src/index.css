@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bgChange{
+    background-color: white;
+}
+
+.bgChange:hover{
+    transition: 1s;
+    background-color:rgba(90, 1, 90, 0.836);
+}
+.bgChange:not(:hover){
+    transition: 1s;
+    background-color:white;
+}
+
+.text-gradient2{       
+    background: linear-gradient(to left, #419577, #F5D649);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;    
+}
+
+.text-gradient{    
+    background: linear-gradient(to left, #F5D649, #F5AB41);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.animation-hover{
+    background-image: linear-gradient(to left, #b98132, #F5D649, #b98132);
+    background-size: 200%;
+    transition: 0.6s;
+}
+.animation-hover:hover{
+    background-position: right;
+}
