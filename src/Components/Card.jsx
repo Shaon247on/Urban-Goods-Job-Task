@@ -8,8 +8,8 @@ const Card = ({ product }) => {
     const { _id, productName, productImage, price, category, description, brand, ratings, createdAt } = product
     return (
         <div className="relative rounded-md z-20 shadow-md mt-8 dark:bg-gray-800 text-black dark:text-white mx-4 md:h-[660px] lg:h-[600px] ">
-            <div className='overflow-hidden rounded-t-md relative h-[280px] '>
-                <img src={productImage} alt="" className="zoom-effect absolute hover:scale-105 duration-500 z-0 object-cover object-center w-full rounded-t-md h-72 dark:bg-black" />
+            <div className='overflow-hidden rounded-t-md relative h-[280px] flex items-center justify-center'>
+                <img src={productImage} alt="" className="zoom-effect absolute hover:scale-105 duration-500 z-0 object-cover object-center w-[70%] rounded-t-md h-72 dark:bg-black" />
                 <h4 className='font-bold text-[18px] bg-white  text-black px-2 rounded-sm z10 absolute bottom-2 right-3'>${price}</h4>
             </div>
             <div className="flex flex-col justify-between mt-5 p-2 ">
