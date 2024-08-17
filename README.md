@@ -27,9 +27,7 @@ I'm aminul Islam Shaon, an student who is giving his full potentiality to learn 
 
 👩‍💻 animate.css
 
-🗺️ react-leaflet
-
-🏃‍♂️ swiper.js
+🗺️ React Icons
 
 ## How To Run In Your LocalHost 🏃‍♂️
 
