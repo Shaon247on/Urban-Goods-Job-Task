@@ -1,7 +1,4 @@
-const BrandSelect = ({ products, register, reset }) => {
-  const uniqueCategories = [...new Set(products.map(product => product.brand))]
-  console.log(uniqueCategories);
-
+const BrandSelect = ({ products, register, reset }) => {  
   return (
     <>
       <label className='text-xl font-semibold mb-3 mt-8 text-[#419577]'>Brand</label>

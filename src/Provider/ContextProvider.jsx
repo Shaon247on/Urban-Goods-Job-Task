@@ -3,6 +3,8 @@ import { createContext, useEffect, useState } from 'react';
 export const StateContext = createContext(null)
 
 const ContextProvider = ({ children }) => {
+    const [currentPage, setCurrentPage] = useState(1)
+    const [totalPage, setTotalPage] = useState(null)
 
     //      ----------------- Theme related state -----------------------
 
@@ -18,6 +20,10 @@ const ContextProvider = ({ children }) => {
     const info = {
         theme,
         setTheme,
+        currentPage, 
+        setCurrentPage,
+        totalPage, 
+        setTotalPage
     }
 
     return (

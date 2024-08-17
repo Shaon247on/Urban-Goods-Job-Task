@@ -20,7 +20,7 @@ const SortAndFilter = ({ onChange }) => {
         setFilters(data)
         onChange(data, value)
         refetch()
-        console.log(products.slice(0, 10));
+        // console.log(products.slice(0, 10));
     }
 
     const handleReset = () => {
