@@ -31,5 +31,10 @@ I'm aminul Islam Shaon, an student who is giving his full potentiality to learn 
 
 🏃‍♂️ swiper.js
 
+## How To Run In Your LocalHost 🏃‍♂️
+
+- Step-1: "git clone" => Clone the Repo using "Clone_Link"
+- Step-2: "npm i" => To install all the NPM Packages.
+- Step-3: "npm run dev" & "o"+ "Enter" => Run the site in your LocalHost.
 
 
