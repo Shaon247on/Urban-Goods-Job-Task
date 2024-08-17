@@ -1,14 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import useProvider from '../Hooks/useProvider';
+import logo1 from '../assets/Urban-Dark.png';
+import logo2 from '../assets/Urban-Light.png';
 
 const Footer = () => {
+    const { theme} = useProvider()
     return (
         <React.Fragment>
-            <footer className="footer footer-center bg-base-200 text-base-content rounded p-10">
+            <footer className="footer footer-center bg-base-200 text-base-content rounded p-10 pt-9">
+                <div className='flex items-center justify-center'>
+                <img src={`${theme === "black" ? logo1 : logo2}`} alt="" className='rounded-full w-12 md:w-20 h-12 md:h-20' />
+                </div>
                 <nav className="grid grid-flow-col gap-4">
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
+                    <Link to='/'><a className="link link-hover">Home</a></Link>
+                    <Link to='/products'><a className="link link-hover">Products</a></Link>
                 </nav>
                 <nav>
                     <div className="grid grid-flow-col gap-4">
@@ -48,7 +54,7 @@ const Footer = () => {
                     </div>
                 </nav>
                 <aside>
-                    <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+                    <p>Copyright © {new Date().getFullYear()} - All right reserved by Md. Aminul Islam Shaon</p>
                 </aside>
             </footer>
         </React.Fragment>

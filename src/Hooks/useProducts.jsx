@@ -19,7 +19,7 @@ const useProducts = (newData, value, page) => {
                 }
             });            
             setTotalPage(data.totalPages)
-            // console.log(data.totalPages);
+            console.log(data.totalPages);
             return data.result;
         }
     });   

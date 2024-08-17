@@ -7,8 +7,6 @@ import auth from "../Firebase/firebase.config";
 
 export const AuthContext = new createContext(null)
 const googleProvider = new GoogleAuthProvider()
-const githubProvider = new GithubAuthProvider()
-const twitterProvider = new TwitterAuthProvider()
 
 
 const AuthProvider = ({ children }) => {
@@ -23,32 +21,13 @@ const AuthProvider = ({ children }) => {
     const googleLogin = () => {
         return signInWithPopup(auth, googleProvider)
     }
-    const githubLogin = () => {
-        return signInWithPopup(auth, githubProvider)
-    }
-    const twitterLogin = () => {
-        return signInWithPopup(auth, twitterProvider)
-    }
+   
 
     const profileUpdate = (name, photo) => {
         setLoading(true)
         return updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: photo
-        })
-    }
-    const photoUpdate = (photo) => {
-        // setLoading(true)
-        window.location.reload()
-        return updateProfile(auth.currentUser, {
-            photoURL: photo
-        })
-    }
-    const nameUpdate = (name) => {
-        // setLoading(true)
-        window.location.reload()
-        return updateProfile(auth.currentUser, {
-            displayName: name
         })
     }
 
@@ -66,6 +45,7 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser => {
+            console.log(currentUser);
             setUser(currentUser)
             setLoading(false)
         }))
@@ -83,11 +63,7 @@ const AuthProvider = ({ children }) => {
         loading,
         logOut,
         profileUpdate,
-        googleLogin,
-        githubLogin,
-        twitterLogin,
-        photoUpdate,
-        nameUpdate
+        googleLogin
     }
 
     return (

@@ -4,10 +4,12 @@ import { Link, NavLink } from 'react-router-dom';
 import useProvider from '../Hooks/useProvider';
 import logo1 from '../assets/Urban-Dark.png';
 import logo2 from '../assets/Urban-Light.png';
+import useAuth from '../Hooks/useAuth';
 
 const NavBar = () => {
     const [toggle, setToggle] = useState(false)
     const { theme, setTheme } = useProvider()
+    const { logOut, user } = useAuth()
     const navLinks =
         <>
             <NavLink to='/' style={({ isActive }) => ({
@@ -26,6 +28,16 @@ const NavBar = () => {
 
 
 
+    const handleSignOut = () => {
+        logOut()
+            .then(result => {
+                console.log('user log out', result)
+            })
+            .catch(error => {
+                console.error(error);
+            })
+
+    }
     const handleBlur = () => {
         setToggle(false)
         // console.log(toggle);
@@ -179,7 +191,36 @@ const NavBar = () => {
 
                     {/*----------------- Login Button ----------------- */}
 
-                    <Link to='/login'><button className="px-4 py-2 rounded-lg  animation-hover text-white font-semibold">Login</button></Link>
+                    {
+                        user ? <>
+                            <div className="animate__animated animate__backInRight animate__slow-[200ms]">
+                                {
+
+                                    user ?
+
+
+                                        <>
+                                            <div className="tooltip tooltip-top mr-4 relative z-30" data-tip={user?.displayName}>
+                                                <img src={user.photoURL} alt="" className="avatar object-cover w-[38px] md:w-[44px] h-[38px] md:h-[44px] rounded-full" />
+                                            </div>
+                                        </> :
+                                        <><samp></samp></>
+                                }
+                            </div>
+                            <div className="animate__animated animate__fadeIn animate__slow-[300ms]">
+                                {
+                                    user ? <>
+                                        <Link to='/login'><button onClick={handleSignOut} className="bg-[#419577] px-4 py-2 font-semibold text-lg flex items-center gap-2 justify-center rounded-lg">Sign Out</button></Link>
+
+                                    </> :
+                                        <span></span>
+
+                                }
+                            </div>
+                        </> :
+                            <Link to='/login'><button className="bg-[#419577] px-4 py-2 font-semibold text-lg flex items-center gap-2 justify-center rounded-lg">Login</button></Link>
+
+                    }
                 </div>
             </div>
         </React.Fragment>

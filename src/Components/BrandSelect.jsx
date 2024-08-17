@@ -1,4 +1,4 @@
-const BrandSelect = ({ products, register, reset }) => {  
+const BrandSelect = ({  register }) => {  
   return (
     <>
       <label className='text-xl font-semibold mb-3 mt-8 text-[#419577]'>Brand</label>

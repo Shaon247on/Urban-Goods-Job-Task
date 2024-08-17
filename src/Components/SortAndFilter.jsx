@@ -32,13 +32,13 @@ const SortAndFilter = ({ onChange }) => {
     return (
         <div>
             <form className="flex gap-6 flex-col lg:flex-row items-start lg:items-center justify-between" onSubmit={handleSubmit(onSubmit)}>
-                <div className='flex gap-9 items-center justify-between mt-8'>
+                <div className='flex flex-col md:flex-row gap-9 items-center justify-between mt-8 pl-5'>
 
                     <div>
                         <FilterDrawer setValue={setValue} value={value} products={products} register={register} handleReset={handleReset}></FilterDrawer>
                     </div>
 
-                    <input {...register('search')} placeholder="Search by name" className='w-[100px] md:w-[250px] lg:w-[350px] px-3 py-2 placeholder-[#F5AB41] focus:placeholder-transparent border-b-[#F5AB41] border-b focus:border-b-[#F5AB41] duration-150  focus:border-b-4 hover:border-b-[#F5AB41] hover:border-b-4 outline-none bg-transparent' />
+                    <input {...register('search')} placeholder="Search by name" className='w-[200px] md:w-[280px] lg:w-[350px] px-3 py-2 placeholder-[#F5AB41] focus:placeholder-transparent border-b-[#F5AB41] border-b focus:border-b-[#F5AB41] duration-150  focus:border-b-4 hover:border-b-[#F5AB41] hover:border-b-4 outline-none bg-transparent' />
 
                     <select {...register('sort')} className='select select-warning w-full max-w-[200px]'>
                         <option value="createdAt">Sort by Date Added</option>
@@ -47,7 +47,7 @@ const SortAndFilter = ({ onChange }) => {
                     </select>
 
                 </div>
-                <div className='flex items-center gap-4'>
+                <div className='flex items-center gap-4 pl-5'>
                     <button className='px-4 py-2 rounded-lg animation-hover' type="submit">Apply</button>
                     <button className='px-4 py-2 rounded-lg animation-hover' type="button" onClick={handleReset}>Reset</button>
                 </div>

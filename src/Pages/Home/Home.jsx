@@ -5,8 +5,8 @@ import Products from '../Products/Products';
 const Home = () => {
     return (
         <div>
-            <Banner/>
-            <Products></Products>
+            <Banner />
+            <Products />
         </div>
     );
 };
