@@ -35,6 +35,8 @@ I'm aminul Islam Shaon, an student who is giving his full potentiality to learn 
 
 - Step-1: "git clone" => Clone the Repo using "Clone_Link"
 - Step-2: "npm i" => To install all the NPM Packages.
-- Step-3: "npm run dev" & "o"+ "Enter" => Run the site in your LocalHost.
+- Step-3: Open the code in VSCode.
+- Step-4: Open "useAxios.jsx" and replace the baseURL to your Local URL. Exm: http://localhost:5173
+- Step-5: "npm run dev" & "o"+ "Enter" => Run the site in your LocalHost.
 
 
