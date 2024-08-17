@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import useProvider from '../Hooks/useProvider';
 import logo1 from '../assets/Urban-Dark.png';
 import logo2 from '../assets/Urban-Light.png';
@@ -179,7 +179,7 @@ const NavBar = () => {
 
                     {/*----------------- Login Button ----------------- */}
 
-                    <a className="btn animation-hover text-white font-semibold">Login</a>
+                    <Link to='/login'><button className="px-4 py-2 rounded-lg  animation-hover text-white font-semibold">Login</button></Link>
                 </div>
             </div>
         </React.Fragment>
