@@ -12,6 +12,7 @@ import Products from './Pages/Products/Products';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register';
+import AuthProvider from './Provider/AuthProvider';
 
 
 const queryClient = new QueryClient()
@@ -26,15 +27,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/products',
-        element: <Products/>
+        element: <Products />
       },
       {
         path: '/login',
-        element: <Login/>
+        element: <Login />
       },
       {
         path: '/register',
-        element: <Register/>
+        element: <Register />
       }
     ]
   },
@@ -42,10 +43,12 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ContextProvider>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-      </QueryClientProvider>
-    </ContextProvider>
+    <AuthProvider>
+      <ContextProvider>
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} />
+        </QueryClientProvider>
+      </ContextProvider>
+    </AuthProvider>
   </StrictMode>,
 )

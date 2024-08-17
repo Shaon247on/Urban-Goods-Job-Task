@@ -11,7 +11,7 @@ const Products = () => {
     const [page, setPage] = useState(null)
 
     const [products, refetch, loading] = useProducts(page)
-    console.log(loading);
+    // console.log(loading);
 
     // console.log(products);
     const handleFilter = (e) => {

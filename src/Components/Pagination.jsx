@@ -4,7 +4,7 @@ import useProducts from '../Hooks/useProducts';
 
 const Pagination = ({ onPageChange }) => {
     const {currentPage, totalPage} = useProvider()
-    console.log(totalPage, currentPage);
+    // console.log(totalPage, currentPage);
     const [,refetch] = useProducts()
 
     const pageNumbers = [];
